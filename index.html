@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Tasks | To-Do List</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main class="app">
+
+        <header class="app-header">
+            <h1>My Tasks</h1>
+            <p>Stay organized, stay productive.</p>
+        </header>
+
+
+        <section class="task-input-section">
+
+            <input
+                type="text"
+                id="taskInput"
+                placeholder="What needs to be done?"
+                autocomplete="off"
+            >
+
+            <button id="addTaskBtn">
+                Add Task
+            </button>
+
+        </section>
+
+
+        <nav class="filters">
+
+            <button class="filter-btn active" data-filter="all">
+                All
+            </button>
+
+            <button class="filter-btn" data-filter="active">
+                Active
+            </button>
+
+            <button class="filter-btn" data-filter="completed">
+                Completed
+            </button>
+
+        </nav>
+
+
+        <section class="task-section">
+
+            <ul id="taskList"></ul>
+
+            <p id="emptyMessage">
+                No tasks yet. Add your first task!
+            </p>
+
+        </section>
+
+
+        <footer class="task-footer">
+
+            <span id="taskCount">
+                0 tasks remaining
+            </span>
+
+            <button id="clearCompleted">
+                Clear Completed
+            </button>
+
+        </footer>
+
+    </main>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,510 @@
+/* =========================
+   Global Styles
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    min-height: 100vh;
+
+    background: linear-gradient(
+        135deg,
+        #102a23,
+        #1b3a32,
+        #f5f1e8
+    );
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+
+    padding: 60px 20px;
+
+    color: #24332d;
+}
+
+/* =========================
+   Main App
+========================= */
+
+.app {
+    width: 100%;
+    max-width: 680px;
+
+    background: #ffffff;
+
+    /* Softer modern shape */
+    border-radius: 32px;
+
+    padding: 36px;
+
+    border: 1px solid #e3dbcf;
+
+    box-shadow:
+        0 12px 30px rgba(16, 42, 35, 0.15),
+        0 30px 65px rgba(16, 42, 35, 0.13);
+
+    position: relative;
+}
+
+/* Green Top Accent */
+
+.app::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 80px;
+    height: 4px;
+
+    background: #245c4a;
+
+    border-radius: 0 0 8px 8px;
+}
+
+/* =========================
+   Header
+========================= */
+
+.app-header {
+    text-align: center;
+
+    margin-bottom: 28px;
+
+    padding-top: 5px;
+}
+
+.app-header h1 {
+    font-size: 36px;
+
+    color: #123f30;
+
+    margin-bottom: 8px;
+
+    font-weight: 800;
+
+    letter-spacing: -0.8px;
+}
+
+.app-header p {
+    color: #62584d;
+
+    font-size: 15px;
+
+    font-weight: 500;
+
+    line-height: 1.6;
+}
+
+/* =========================
+   Task Input
+========================= */
+
+.task-input-section {
+    display: flex;
+
+    gap: 10px;
+
+    margin-bottom: 22px;
+}
+
+#taskInput {
+    flex: 1;
+
+    padding: 14px 16px;
+
+    border: 1px solid #cfc4b4;
+
+    border-radius: 12px;
+
+    font-size: 14px;
+
+    outline: none;
+
+    color: #24332d;
+
+    background: #fffdf9;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+#taskInput::placeholder {
+    color: #9b9184;
+}
+
+#taskInput:focus {
+    border-color: #245c4a;
+
+    box-shadow:
+        0 0 0 3px rgba(36, 92, 74, 0.10);
+}
+
+/* =========================
+   Add Button
+========================= */
+
+#addTaskBtn {
+    border: none;
+
+    padding: 0 22px;
+
+    border-radius: 12px;
+
+    background: #174b3b;
+
+    color: #ffffff;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        transform 0.15s ease,
+        box-shadow 0.2s ease;
+}
+
+#addTaskBtn:hover {
+    background: #10382c;
+
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 5px 12px rgba(23, 75, 59, 0.18);
+}
+
+#addTaskBtn:active {
+    transform: translateY(0);
+}
+
+/* =========================
+   Filters
+========================= */
+
+.filters {
+    display: flex;
+
+    gap: 8px;
+
+    margin-bottom: 16px;
+}
+
+.filter-btn {
+    border: 1px solid #ded5c8;
+
+    background: #f5f1e9;
+
+    padding: 8px 16px;
+
+    border-radius: 10px;
+
+    cursor: pointer;
+
+    color: #62574b;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.filter-btn:hover {
+    background: #e8e1d7;
+
+    color: #174b3b;
+}
+
+.filter-btn.active {
+    background: #174b3b;
+
+    border-color: #174b3b;
+
+    color: #ffffff;
+}
+
+/* =========================
+   Task Section
+========================= */
+
+.task-section {
+    min-height: 120px;
+
+    background: #fdfcf9;
+
+    border: 1px solid #e8e1d7;
+
+    border-radius: 18px;
+
+    padding: 4px 10px;
+
+    box-shadow:
+        inset 0 1px 2px rgba(60, 45, 30, 0.03);
+}
+
+#taskList {
+    list-style: none;
+}
+
+/* =========================
+   Task Item
+========================= */
+
+.task-item {
+    display: flex;
+
+    align-items: center;
+
+    gap: 13px;
+
+    padding: 14px 8px;
+
+    border-bottom: 1px solid #e4ddd3;
+
+    transition:
+        background 0.2s ease,
+        padding-left 0.2s ease,
+        opacity 0.2s ease;
+}
+
+.task-item:hover {
+    background: #faf8f4;
+
+    padding-left: 10px;
+}
+
+.task-item:last-child {
+    border-bottom: none;
+}
+
+/* =========================
+   Checkbox
+========================= */
+
+.task-item input[type="checkbox"] {
+    width: 18px;
+
+    height: 18px;
+
+    cursor: pointer;
+
+    accent-color: #245c4a;
+
+    flex-shrink: 0;
+}
+
+/* =========================
+   Task Text
+========================= */
+
+.task-text {
+    flex: 1;
+
+    font-size: 15px;
+
+    color: #20382d;
+
+    font-weight: 600;
+
+    line-height: 1.5;
+
+    word-break: break-word;
+}
+
+/* =========================
+   Completed Task
+========================= */
+
+/* Light/faded completed task
+   NO line-through */
+
+.task-item.completed {
+    opacity: 0.55;
+}
+
+.task-item.completed .task-text {
+    color: #9b9184;
+
+    font-weight: 500;
+
+    /* Removed the cutting line */
+    text-decoration: none;
+}
+
+/* =========================
+   Task Actions
+========================= */
+
+.task-actions {
+    display: flex;
+
+    gap: 5px;
+}
+
+.task-actions button {
+    border: none;
+
+    background: transparent;
+
+    cursor: pointer;
+
+    padding: 6px;
+
+    border-radius: 7px;
+
+    font-size: 14px;
+
+    transition:
+        background 0.2s ease,
+        transform 0.15s ease;
+}
+
+.task-actions button:hover {
+    background: #f1ece4;
+
+    transform: scale(1.08);
+}
+
+.edit-btn {
+    color: #6f563e;
+}
+
+.delete-btn {
+    color: #9b3f32;
+}
+
+/* =========================
+   Empty Message
+========================= */
+
+#emptyMessage {
+    text-align: center;
+
+    color: #9b9184;
+
+    padding: 32px 10px;
+
+    font-size: 14px;
+
+    font-weight: 500;
+}
+
+/* =========================
+   Footer
+========================= */
+
+.task-footer {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-top: 18px;
+
+    padding-top: 18px;
+
+    border-top: 1px solid #e4ddd3;
+
+    font-size: 13px;
+
+    color: #786b5c;
+}
+
+#clearCompleted {
+    border: none;
+
+    background: transparent;
+
+    color: #245c4a;
+
+    cursor: pointer;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    transition: color 0.2s ease;
+}
+
+#clearCompleted:hover {
+    color: #10382c;
+
+    text-decoration: underline;
+}
+
+/* =========================
+   Mobile Responsive
+========================= */
+
+@media (max-width: 600px) {
+
+    body {
+        padding: 25px 12px;
+    }
+
+    .app {
+        padding: 28px 18px;
+
+        border-radius: 24px;
+    }
+
+    .app-header h1 {
+        font-size: 29px;
+    }
+
+    .app-header p {
+        font-size: 14px;
+    }
+
+    .task-input-section {
+        flex-direction: column;
+    }
+
+    #addTaskBtn {
+        padding: 13px;
+    }
+
+    .filters {
+        overflow-x: auto;
+
+        padding-bottom: 3px;
+    }
+
+    .filter-btn {
+        white-space: nowrap;
+    }
+
+    .task-item {
+        padding: 14px 5px;
+    }
+
+    .task-text {
+        font-size: 14px;
+    }
+
+    .task-footer {
+        flex-direction: column;
+
+        gap: 10px;
+
+        align-items: flex-start;
+    }
+}
